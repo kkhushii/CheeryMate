@@ -2,33 +2,75 @@ package hackOn2021.cheerymate;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.firebase.ui.auth.AuthUI;
+import com.firebase.ui.auth.IdpResponse;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView AppName;
-    private Button signin;
-    private Button login;
-    EditText username,pass;
+    private TextView textViewHello; //This displays the Hello Text, just for test
+    private ImageButton buttonGoogleSignIn;
+    private final int RC_SIGN_IN = 1001;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppName = findViewById(R.id.Appname);
+        textViewHello = findViewById(R.id.mainActivityHelloTextView);
+        buttonGoogleSignIn = findViewById(R.id.mainActivityButtonGoogleLogin);
 
-        username = findViewById(R.id.username);
-        pass = findViewById(R.id.password);
-        final String user = username.getText().toString().trim();
-        final String password = pass.getText().toString().trim();
-
-        signin = findViewById(R.id.gsignin);
-        login = findViewById(R.id.login);
-
-
+        initialiseButton();
     }
+
+    private void initialiseButton()
+    {
+        buttonGoogleSignIn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signIn();
+            }
+        });
+    }
+
+    private void signIn()
+    {
+        List<AuthUI.IdpConfig> providers = Arrays.asList(
+                new AuthUI.IdpConfig.GoogleBuilder().build());
+
+           startActivityForResult(
+                AuthUI.getInstance()
+                        .createSignInIntentBuilder()
+                        .setAvailableProviders(providers)
+                        .build(),
+                RC_SIGN_IN);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RC_SIGN_IN) {
+            IdpResponse response = IdpResponse.fromResultIntent(data);
+
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, "Sign in success!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(this, FeedActivity.class);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Sign in failure, try again.", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+
 }
