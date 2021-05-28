@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "964641272081",
+    "project_id": "hackon2021-cheerymate",
+    "storage_bucket": "hackon2021-cheerymate.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:964641272081:android:679b2e53832615c0f71cb0",
+        "android_client_info": {
+          "package_name": "hackOn2021.cheerymate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "964641272081-ijhl0jlp1lnb7gifji9of2b7hlcdvi2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hackOn2021.cheerymate",
+            "certificate_hash": "5de135e35c312b158b195fd9aac2f7c23601077a"
+          }
+        },
+        {
+          "client_id": "964641272081-endsc8sj3i9eu94ugct7ilordch23ct2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDPTxrJjhjFCMf61jUtBQYTwM5MPmgact4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "964641272081-endsc8sj3i9eu94ugct7ilordch23ct2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
