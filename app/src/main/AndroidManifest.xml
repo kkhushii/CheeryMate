@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="hackOn2021.cheerymate">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheeryMate">
-        <activity android:name=".FeedActivity"></activity>
+        <activity android:name=".fragment.PostUploadActivity"></activity>
+        <activity android:name=".post.PostImageOnClickZoom" />
+        <activity android:name=".post.PostLikeOnClick" />
+        <activity android:name=".post.PostCommentActivity" />
+        <activity android:name=".MessageActivity" />
+        <activity android:name=".MentorFeed" />
+        <activity android:name=".FeedActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

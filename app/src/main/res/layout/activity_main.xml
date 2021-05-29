@@ -1,28 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background1"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/mainActivityHelloTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Hello Hello Hello!!!\nClick the Button Below to Login"
-        android:layout_centerInParent="true" />
 
-    <!--Do not change Id of the below button
-    and change the android:src attribute to a google logo-->
-    <ImageButton
-        android:id="@+id/mainActivityButtonGoogleLogin"
+    <TextView
+        android:id="@+id/textViewMentorSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/mainActivityHelloTextView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
-        android:src="@android:drawable/ic_lock_lock"
-        />
+        android:textColor="#fff"
+        android:layout_alignParentEnd="true"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
+        android:text="Mentor SignIn >" />
+
+            <TextView
+                android:id="@+id/Appname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="CheeryMate"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textSize="49sp"/>
+
+    <!-- change the android:src to new google button Image -->
+    <ImageButton
+        android:id="@+id/gsignin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@color/material_on_background_disabled"
+        android:src="@drawable/common_google_signin_btn_icon_light_normal"
+        android:textColor="@color/white"/>
+
 
 </RelativeLayout>

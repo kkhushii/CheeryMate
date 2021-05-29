@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Add icon using android:icon="@drawable/ic_project" inside all tag -->
+
+    <item android:id="@+id/bottom_nav_feed"
+        android:title="Feed" />
+
+    <item android:id="@+id/bottom_expert_connect"
+
+        android:title="Expert Connect" />
+
+    <item android:id="@+id/bottom_profile"
+        android:title="Profile" />
+
+</menu>
