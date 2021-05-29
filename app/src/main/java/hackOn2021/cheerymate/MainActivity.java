@@ -17,7 +17,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textViewHello; //This displays the Hello Text, just for test
+    private TextView Appname; //This displays the Hello Text, just for test
     private ImageButton buttonGoogleSignIn;
     private final int RC_SIGN_IN = 1001;
 
@@ -26,8 +26,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        textViewHello = findViewById(R.id.mainActivityHelloTextView);
-        buttonGoogleSignIn = findViewById(R.id.mainActivityButtonGoogleLogin);
+        Appname = findViewById(R.id.Appname);
+        buttonGoogleSignIn = findViewById(R.id.gsignin);
 
         initialiseButton();
     }

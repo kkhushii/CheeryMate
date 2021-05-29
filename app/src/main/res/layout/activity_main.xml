@@ -42,36 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
             </Button>
-            <EditText
-                android:id="@+id/username"
-                android:layout_marginTop="90dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter username"/>
 
-            <EditText
-                android:id="@+id/password"
-                android:layout_marginTop="140dp"
-                android:textStyle="bold"
-                android:gravity="center"
-                android:layout_marginLeft="30dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Enter Password"/>
-            <Button
-                android:id="@+id/login"
-                android:text="Log in"
-                android:backgroundTint="@color/material_on_background_disabled"
-                android:layout_marginTop="195dp"
-                android:gravity="center"
-                android:layout_marginLeft="87dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
         </RelativeLayout>
 
 
