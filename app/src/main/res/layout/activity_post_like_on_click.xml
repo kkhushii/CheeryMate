@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#e6e6e6"
+    tools:context=".post.PostLikeOnClick">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/colorAccent"
+        android:id="@+id/cityMemberShowToolBarLinearLayout"
+        android:gravity="bottom"
+        >
+
+        <ImageButton
+            android:id="@+id/cityMemberShowButtonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="13dp"
+            android:layout_marginStart="8dp"
+            android:padding="8dp"
+            android:background="@color/fui_transparent"
+            app:srcCompat="@drawable/abc_vector_test" />
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/cityMemberShowToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorPrimaryDark"
+            app:title="0 Likes"
+            app:titleTextColor="#FFFFFF" />
+    </LinearLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cityMemberShowNestedScrollView"
+        android:layout_below="@+id/cityMemberShowToolBarLinearLayout"
+        android:background="#e6e6e6">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cityMemberShowRecyclerView">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </androidx.core.widget.NestedScrollView>
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#fff"
+        android:id="@+id/progress_bar_load_city_members_show"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
