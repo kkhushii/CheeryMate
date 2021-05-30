@@ -41,7 +41,7 @@ public class FeedActivity extends AppCompatActivity {
 
     /** Bottom Nav Menu Section **/
 
-    private BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener =
+    protected BottomNavigationView.OnNavigationItemSelectedListener bottomNavListener =
             new BottomNavigationView.OnNavigationItemSelectedListener() {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {

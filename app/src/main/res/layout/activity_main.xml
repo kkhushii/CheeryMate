@@ -31,6 +31,17 @@
                 android:textSize="49sp"/>
 
     <!-- change the android:src to new google button Image -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SignIn With Google to Continue"
+        android:layout_above="@+id/gsignin"
+        android:textColor="#FFF"
+        android:layout_centerHorizontal="true"
+        android:textSize="15sp"
+        android:layout_marginBottom="8dp"/>
+
     <ImageButton
         android:id="@+id/gsignin"
         android:layout_width="wrap_content"
@@ -38,6 +49,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
+        android:background="@color/fui_transparent"
         android:backgroundTint="@color/material_on_background_disabled"
         android:src="@drawable/common_google_signin_btn_icon_dark_normal"
         android:textColor="@color/white"/>

@@ -49,7 +49,6 @@ public class MainActivity extends AppCompatActivity {
         Log.i("Database", databaseReference.toString());
         initialiseButton();
 
-        Log.i("Database uid", FirebaseAuth.getInstance().getCurrentUser().getUid());
 
         if(FirebaseAuth.getInstance().getCurrentUser()!=null)
             checkCurrentUser(FirebaseAuth.getInstance().getCurrentUser(), 0);
