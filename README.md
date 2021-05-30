@@ -12,7 +12,8 @@
 
 #### Features Comming Soon 
 - Video chat support with experts 
-- Profile Updation -Post, Comment, and Group message moderation by experts
+- Profile Updation 
+- Post, Comment, and Group message moderation by experts
 
 <p align="center">
 <img src="https://he-s3.s3.ap-southeast-1.amazonaws.com/media/sprint/hackon/team/1061419/4f7e657screenshot_20210530_114701798.jpg" width=216px height=456px>
