@@ -3,14 +3,9 @@
 
     <!-- Add icon using android:icon="@drawable/ic_project" inside all tag -->
 
-    <item android:id="@+id/bottom_nav_feed"
-        android:title="Feed"
+    <item android:id="@+id/bottom_nav_mentor_feed"
+        android:title="Home"
         android:icon="@drawable/ic_feed"/>
-
-    <item android:id="@+id/bottom_expert_connect"
-
-        android:title="Expert Connect"
-        android:icon="@drawable/ic_baseline_connect_without_contact_24"/>
 
     <item android:id="@+id/bottom_profile"
         android:title="Profile"

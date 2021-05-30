@@ -11,6 +11,7 @@
     <LinearLayout
         android:id="@+id/PostImageZoomAppBar"
         android:layout_width="match_parent"
+        android:background="@color/teal_700"
         android:layout_height="wrap_content"
         >
 

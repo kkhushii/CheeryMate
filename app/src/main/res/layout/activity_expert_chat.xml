@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".FeedActivity">
+
+    <include
+        android:id="@+id/MessageActivityToolbar"
+        layout="@layout/tool_bar"
+        />
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/messageActivitySwipeRefreshLayout"
+        android:layout_below="@+id/MessageActivityToolbar"
+        android:layout_above="@id/bottom"
+        >
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#e6e6e6"
+            android:id="@+id/message_recycler_view"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="5dp"
+        android:id="@+id/bottom"
+        android:background="#fff"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/editTextSendMessage"
+            android:background="@android:color/transparent"
+            android:hint="Type a message..."
+            android:maxLines="5"
+            android:layout_toLeftOf="@id/buttonMessageSend"
+            android:layout_centerVertical="true"/>
+
+        <ImageButton
+            android:id="@+id/buttonMessageSend"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_send" />
+
+    </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBarMessage"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>

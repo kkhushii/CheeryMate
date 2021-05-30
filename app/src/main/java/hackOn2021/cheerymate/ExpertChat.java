@@ -1,8 +1,8 @@
 package hackOn2021.cheerymate;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -31,7 +31,9 @@ import java.util.List;
 import hackOn2021.cheerymate.adapter.MessageAdapter;
 import hackOn2021.cheerymate.module.MessageChat;
 
-public class MessageActivity extends AppCompatActivity {
+
+public class ExpertChat extends AppCompatActivity {
+
 
     private FirebaseUser firebaseUser; private DatabaseReference databaseReference;
     private EditText editTextMessageField; private ImageButton buttonMessageSend;
@@ -39,39 +41,34 @@ public class MessageActivity extends AppCompatActivity {
     private ProgressBar messgaeProgressBar;
     private Toolbar toolbar; private SwipeRefreshLayout swipeRefreshLayout; private LinearLayoutManager linearLayout;
     private int loadLimit = 50; private List<MessageChat> tempList;
-  //  private SharedPreferences sharedPreferences;
-    //    private boolean activityRunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_message);
+        setContentView(R.layout.activity_expert_chat);
 
         toolbar = findViewById(R.id.MessageActivityToolbar);
         setSupportActionBar(toolbar);
         swipeRefreshLayout = findViewById(R.id.messageActivitySwipeRefreshLayout);
         messgaeProgressBar = findViewById(R.id.progressBarMessage);
-        getSupportActionBar().setTitle("Group Chat");
+        getSupportActionBar().setTitle("Expert Chat");
         tempList = new ArrayList<>();
         recyclerView = findViewById(R.id.message_recycler_view);
         recyclerView.setHasFixedSize(true);
-        linearLayout = new LinearLayoutManager(MessageActivity.this);
+        linearLayout = new LinearLayoutManager(ExpertChat.this);
         messageChat = new ArrayList<>();
         messageAdapter = new MessageAdapter(getApplicationContext(),messageChat);
         recyclerView.setAdapter(messageAdapter);
         recyclerView.setLayoutManager(linearLayout);
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         databaseReference = FirebaseDatabase.getInstance("https://hackon2021-cheerymate-default-rtdb.asia-southeast1.firebasedatabase.app")
-                .getReference().child("chat");
+                .getReference().child("expertChat").child(firebaseUser.getUid());
         editTextMessageField = findViewById(R.id.editTextSendMessage);
         buttonMessageSend = findViewById(R.id.buttonMessageSend);
-       // sharedPreferences = getSharedPreferences("MessagePreference", Context.MODE_PRIVATE);
-        editTextMessageField.setEnabled(false);
-      //  FeedActivity.toolbarMenu.getItem(0).setIcon(R.drawable.ic_chat);
+        //editTextMessageField.setEnabled(false);
         checkMessage();
         setButtonActivity();
         setSwipeRefreshLayout();
-        //activityRunning = true;
     }
 
     public void setSwipeRefreshLayout() {
@@ -117,6 +114,7 @@ public class MessageActivity extends AppCompatActivity {
                         }catch (Exception e)
                         {
                             e.printStackTrace();
+                            messgaeProgressBar.setVisibility(View.GONE);
                         }
 
                     }
@@ -183,6 +181,7 @@ public class MessageActivity extends AppCompatActivity {
                 }catch (Exception e)
                 {
                     e.printStackTrace();
+                    messgaeProgressBar.setVisibility(View.GONE);
                 }
             }
 
@@ -204,12 +203,10 @@ public class MessageActivity extends AppCompatActivity {
                     messageChat.add(message);
                     messageAdapter.notifyDataSetChanged();
                     linearLayout.scrollToPosition(messageChat.size() - 1);
-//                    if(activityRunning){
-//                        sharedPreferences.edit().putString("messageKey", message.getMessageId()).apply();
-//                    }
                 }catch (Exception e)
                 {
                     e.printStackTrace();
+                    messgaeProgressBar.setVisibility(View.GONE);
                 }
             }
 
@@ -234,5 +231,6 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
     }
+
 
 }

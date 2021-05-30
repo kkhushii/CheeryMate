@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CheeryMate">
-        <activity android:name=".fragment.PostUploadActivity"></activity>
+        <activity android:name=".ExpertChat"></activity>
+        <activity android:name=".fragment.PostUploadActivity" />
         <activity android:name=".post.PostImageOnClickZoom" />
         <activity android:name=".post.PostLikeOnClick" />
         <activity android:name=".post.PostCommentActivity" />
