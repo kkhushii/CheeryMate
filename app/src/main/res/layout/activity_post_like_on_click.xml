@@ -11,7 +11,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/colorAccent"
+        android:background="@color/teal_700"
         android:id="@+id/cityMemberShowToolBarLinearLayout"
         android:gravity="bottom"
         >

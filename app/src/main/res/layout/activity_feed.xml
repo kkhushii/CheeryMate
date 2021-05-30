@@ -20,6 +20,7 @@
         <include
             android:id="@+id/drawer_layout_toolbar"
             layout="@layout/tool_bar"
+
             />
 
 
@@ -39,7 +40,7 @@
                 android:id="@+id/bottom_navigation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:backgroundTint="#f9a"
+                app:backgroundTint="@color/teal_700"
                 android:layout_alignParentBottom="true"
                 android:background="#fff"
                 app:menu="@menu/bottom_nav_menu" />

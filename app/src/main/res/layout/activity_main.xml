@@ -39,8 +39,10 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
         android:backgroundTint="@color/material_on_background_disabled"
-        android:src="@drawable/common_google_signin_btn_icon_light_normal"
+        android:src="@drawable/common_google_signin_btn_icon_dark_normal"
         android:textColor="@color/white"/>
+
+
 
 
 </RelativeLayout>
